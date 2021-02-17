@@ -1,0 +1,16 @@
+[user]
+	email = i@hackerchai.com
+	name = hackerchai
+	signingkey = C8F8CE8A31B9CB559D8A555B8D63427716F4A85A
+[http]
+	proxy = socks5://127.0.0.1:1080
+[https]
+	proxy = socks5://127.0.0.1:1080
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim

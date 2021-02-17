@@ -1,0 +1,94 @@
+{
+    "languageserver": {
+        // "ccls": {
+        //     "command": "ccls",
+        //     "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+        //     "rootPatterns": [".ccls-root", "compile_commands.json"],
+        //     "initializationOptions": {
+        //         "cache": {
+        //             "directory": ".ccls-cache"
+        //         },
+        //         "client": {
+        //             "snippetSupport": true
+        //         }
+        //     }
+        // },
+        "kotlin": {
+            "command": "~/kotlin-language-server/server/bin/kotlin-language-server",
+            "filetypes": ["kotlin"]
+        }
+    },
+    "coc.preferences.formatOnSaveFiletypes": [
+        "json",
+        "javascript",
+        "typescript",
+        "dart",
+        "go",
+        "cpp",
+        "rust"
+    ],
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+    "coc.preferences.colorSupport": true,
+    "coc.preferences.maxFileSize": "102400",
+    "suggest.noselect": false,
+    "vetur.format.defaultFormatter.html": "prettier",
+    "vetur.format.options.tabSize": 4,
+    "diagnostic.messageTarget": "float",
+    "diagnostic.virtualText": false,
+    "diagnostic.messageDelay": 100,
+    "diagnostic.checkCurrentLine": true,
+    "codeLens.enable": true,
+    "codeLens.separator": " ",
+    "codeLens.subseparator": " | ",
+    "rust-analyzer.inlayHints.chainingHints": true,
+    "rust-analyzer.updates.channel": "nightly",
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.inlayHints.refreshOnInsertMode": false,
+    "rust-analyzer.checkOnSave.enable": true,
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "rust-analyzer.lens.enable": true,
+    "rust-analyzer.lens.run": true,
+    "rust-analyzer.lens.implementations": true,
+    "rust-analyzer.completion.postfix.enable": true,
+    "go.goplsOptions": {
+        "completeUnimported": true
+    },
+    "go.disable": {
+        "workspaceFolders": false
+    },
+    "clangd.enabled": true,
+    "clangd.semanticHighlighting": true,
+    "prettier.singleQuote": false,
+    "prettier.trailingComma": "es5",
+    "prettier.tabWidth": 4,
+    "prettier.semi": true,
+    "prettier.useTabs": true,
+    "prettier.bracketSpacing": true,
+    "prettier.disableLanguages": [],
+    "prettier.eslintIntegration": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.width": 30,
+    "explorer.file.showHiddenFiles": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.enableVimDevicons": true,
+    "explorer.openAction.select.filter": {
+        "buftypes": [
+            "terminal"
+        ],
+        "filetypes": [
+            "vista_kind",
+            "qf",
+            "minimap"
+        ],
+        "floatingWindows": true
+    },
+    "git.addGBlameToVirtualText": false,
+    "git.addGBlameToBufferVar": false,
+    "git.addedSign.hlGroup": "GitGutterAdd",
+    "git.changedSign.hlGroup": "GitGutterChange",
+    "git.removedSign.hlGroup": "GitGutterDelete",
+    "git.topRemovedSign.hlGroup": "GitGutterDelete",
+    "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+    "eslint.run": "onSave",
+    "eslint.filetypes": ["javascript", "typescript", "vue"]
+}
