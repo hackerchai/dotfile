@@ -179,8 +179,7 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 
 #Go
-go env -w GO111MODULE=on
-go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+export GOPROXY=https://goproxy.io,direct
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
