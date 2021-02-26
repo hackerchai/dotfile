@@ -10,13 +10,6 @@ disabled = false
 truncation_length = 8
 truncation_symbol = "…/"
 
-[status]
-style = "bg:blue"
-symbol = "🔴"
-format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
-map_symbol = true
-disabled = false
-
 [git_status]
 conflicted = "🏳"
 ahead = "🏎💨 ⇡${count}"
@@ -59,12 +52,6 @@ style = "bold red"
 [[battery.display]]  # 当电量在 10% 到 30% 时以 "bold yellow" 样式显示
 threshold = 30
 style = "bold yellow"
-
-[hostname]
-ssh_only = true
-format =  "on [$hostname](bold red) "
-trim_at = ".companyname.com"
-disabled = false
 
 [jobs]
 symbol = "+ "
