@@ -759,6 +759,7 @@ key_bindings:
   - { key: H,     mods: Command,       chars: "\x01\x68" }
   - { key: J,     mods: Command,       chars: "\x01\x6a" }
   - { key: K,     mods: Command,       chars: "\x01\x6b" }
+  - { key: K,     mods: Command|Shift, chars: "\x01\x62" }
   - { key: L,     mods: Command,       chars: "\x01\x6c" }
   - { key: T,     mods: Command,       chars: "\x01\x63" }
   - { key: S,     mods: Command,       chars: "\x01\x73" }
