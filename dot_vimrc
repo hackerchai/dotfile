@@ -1,4 +1,4 @@
-"let mapleader = "\<Space>"
+let mapleader = "\<Space>"
 
 " au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 " au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
@@ -27,7 +27,7 @@ set relativenumber
 
 set nocompatible
 
-set mouse=
+set mouse=a
 
 set cursorline
 set cursorcolumn
@@ -89,7 +89,6 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-autocmd BufReadPost *.kt setlocal filetype=kotlin
 autocmd BufReadPost *.md setlocal filetype=markdown
 
 autocmd InsertLeave * set nopaste
@@ -171,55 +170,36 @@ call plug#begin()
 
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-repeat'
-" Plug 'pseewald/vim-anyfold'
 Plug 'tpope/vim-surround'
 Plug 'FooSoft/vim-argwrap'
 Plug 'andymass/vim-matchup'
 Plug 'ryanoasis/vim-devicons'
 Plug 'ap/vim-buftabline'
 
-" Plug 'rust-lang/rust.vim'
-Plug 'kevinoid/vim-jsonc'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rhysd/vim-clang-format'
 
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'
 Plug 'terryma/vim-expand-region'
-
-Plug 'heavenshell/vim-jsdoc', {
-            \ 'for': ['javascript', 'javascript.jsx','typescript'],
-            \ 'do': 'make install'
-            \}
-
 Plug 'honza/vim-snippets'
 
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
-Plug 'justinmk/vim-gtfo'
 
 Plug 'tpope/vim-fugitive'
 
 Plug 'alpertuna/vim-header'
 
-Plug 'udalov/kotlin-vim'
-Plug 'dart-lang/dart-vim-plugin'
-
-Plug 'posva/vim-vue'
-Plug 'mattn/emmet-vim'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
-"Plug 'tomtom/tcomment_vim'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-rooter'
 Plug 'ntpeters/vim-better-whitespace'
@@ -228,8 +208,6 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'skywind3000/asynctasks.vim'
 
 Plug 'rakr/vim-one'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 
@@ -482,15 +460,12 @@ let g:lightline = {
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " vim-argwrap
-" nnoremap <silent> <leader>a :ArgWrap<CR>
+nnoremap <silent> <leader>a :ArgWrap<CR>
 
 " vim-header
 let g:header_field_author = 'Eason Chai'
 let g:header_field_author_email = 'i@hackerchai.com'
 let g:header_auto_add_header = 0
-
-" rust-vim
-" let g:rustfmt_autosave = 1
 
 " markdown-preview.nvim
 let g:mkdp_auto_start = 1
@@ -501,7 +476,7 @@ let g:mkdp_preview_options = {
             \ 'katex': {},
             \ 'uml': {},
             \ 'maid': {},
-            \ 'disable_sync_scroll': 0,
+           \ 'disable_sync_scroll': 0,
             \ 'sync_scroll_type': 'middle',
             \ 'hide_yaml_meta': 1,
             \ 'sequence_diagrams': {}
@@ -519,113 +494,7 @@ command! -bang -nargs=* Rg
             \   "rg --column --ignore-case --hidden --line-number --no-heading --color=always --iglob '!**/package-lock.json' --iglob '!**/.git/**' --iglob '!**/dist' --iglob '!**/node_modules' --iglob '!**/target' --iglob '!**/yarn.lock' --iglob '!**/Cargo.lock' --iglob '!**/go.sum' ".shellescape(<q-args>), 1,
             \   <bang>0 ? fzf#vim#with_preview('up:60%')
             \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-            \ <bang>0)
-
-" tagbar
-
-" git clone https://github.com/jszakmeister/markdown2ctags
-" ~/.vim/markdown2ctags
-" sudo apt install autoconf
-" git clone https://github.com/universal-ctags/ctags ~/.vim/ctags \
-"   && cd ~/.vim/ctags \
-"   && ./autogen.sh \
-"   && ./configure \
-"   && make \
-"   && make install
-"
-" npm install -g git+https://github.com/ramitos/jsctags.git
-" npm install -g git+https://github.com/Perlence/tstags.git
-" nnoremap <F8> :TagbarToggle<CR>
-" autocmd FileType * call tagbar#autoopen(0)
-let g:tagbar_width=25
-let g:tagbar_ctags_bin='/usr/bin/ctags'
-let g:rust_use_custom_ctags_defs = 1
-let g:tagbar_type_rust = {
-            \ 'ctagsbin' : '/usr/bin/ctags',
-            \ 'ctagstype' : 'rust',
-            \ 'kinds' : [
-            \ 'n:modules',
-            \ 's:structures:1',
-            \ 'i:interfaces',
-            \ 'c:implementations',
-            \ 'f:functions:1',
-            \ 'g:enumerations:1',
-            \ 't:type aliases:1:0',
-            \ 'v:constants:1:0',
-            \ 'M:macros:1',
-            \ 'm:fields:1:0',
-            \ 'e:enum variants:1:0',
-            \ 'P:methods:1',
-            \ ],
-            \ 'sro': '::',
-            \ 'kind2scope' : {
-            \ 'n': 'module',
-            \ 's': 'struct',
-            \ 'i': 'interface',
-            \ 'c': 'implementation',
-            \ 'f': 'function',
-            \ 'g': 'enum',
-            \ 't': 'typedef',
-            \ 'v': 'variable',
-            \ 'M': 'macro',
-            \ 'm': 'field',
-            \ 'e': 'enumerator',
-            \ 'P': 'method',
-            \ }
-            \ }
-let g:tagbar_type_css = {
-            \ 'ctagstype' : 'Css',
-            \ 'kinds'     : [
-            \ 'c:classes',
-            \ 's:selectors',
-            \ 'i:identities'
-            \ ]
-            \ }
-let g:tagbar_type_typescript = {
-            \ 'ctagsbin' : 'tstags',
-            \ 'ctagsargs' : '-f-',
-            \ 'kinds': [
-            \ 'e:enums:0:1',
-            \ 'f:function:0:1',
-            \ 't:typealias:0:1',
-            \ 'M:Module:0:1',
-            \ 'I:import:0:1',
-            \ 'i:interface:0:1',
-            \ 'C:class:0:1',
-            \ 'm:method:0:1',
-            \ 'p:property:0:1',
-            \ 'v:variable:0:1',
-            \ 'c:const:0:1',
-            \ ],
-            \ 'sort' : 0
-            \ }
-let g:tagbar_type_markdown = {
-            \ 'ctagstype': 'markdown',
-            \ 'ctagsbin' : '~/.vim/markdown2ctags/markdown2ctags.py',
-            \ 'ctagsargs' : '-f - --sort=yes --sro=»',
-            \ 'kinds' : [
-            \ 's:sections',
-            \ 'i:images'
-            \ ],
-            \ 'sro' : '»',
-            \ 'kind2scope' : {
-            \ 's' : 'section',
-            \ },
-            \ 'sort': 0,
-            \ }
-let g:tagbar_type_make = {
-            \ 'kinds':[
-            \ 'm:macros',
-            \ 't:targets'
-            \ ]
-            \ }
-let g:tagbar_type_ansible = {
-            \ 'ctagstype' : 'ansible',
-            \ 'kinds' : [
-            \ 't:tasks'
-            \ ],
-            \ 'sort' : 0
-            \ }
+            \ <bang>0/tagba)
 
 " asynctasks
 let g:asyncrun_open = 6
@@ -648,11 +517,6 @@ noremap <silent><F2> :AsyncTask file-build<cr>
 noremap <silent><F3> :AsyncTask project-run<cr>
 noremap <silent><F4> :AsyncTask project-build<cr>
 
-" vim-vue
-" npm i -g eslint eslint-plugin-vue
-autocmd FileType vue syntax sync fromstart
-let g:vue_pre_processors = ['sass', 'scss']
-
 " tmuxline
 let g:tmuxline_powerline_separators = 1
 let g:tmuxline_preset = 'full'
@@ -671,11 +535,6 @@ endif
 let g:indentLine_setConceal = 0
 let g:indentLine_concealcursor = ""
 
-" emmet-vim
-imap <expr> <leader><leader> emmet#expandAbbrIntelligent("\<tab>")
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,vue EmmetInstall
-
 " vim-gutter
 let g:gitgutter_max_signs = 1000
 
@@ -687,26 +546,7 @@ if !has('nvim')
     nnoremap <F8> :VimspectorReset<CR>
 endif
 
-" vim-jsdoc
-let g:jsdoc_enable_es6 = 1
-let g:jsdoc_input_description = 1
-
 " vim-better-whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
-
-" vim-anyfold
-" filetype plugin indent on
-" autocmd Filetype rust,go,javascript,typescript AnyFoldActivate
-" let g:anyfold_fold_comments=1
-" let g:anyfold_fold_toplevel=1
-" set foldlevel=1
-" hi Folded term=NONE cterm=NONE
-
-" Vim airline
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-
-
-
