@@ -743,12 +743,12 @@ key_bindings:
   - { key: V,      mods: Command,            action: Paste            }
   - { key: C,      mods: Command,            action: Copy             }
   - { key: C,      mods: Command, mode: Vi,  action: ClearSelection   }
-  #- { key: H,      mods: Command,            action: Hide             }
+  - { key: H,      mods: Command|Control,    action: Hide             }
   - { key: M,      mods: Command,            action: Minimize         }
   - { key: Q,      mods: Command,            action: Quit             }
   #- { key: W,      mods: Command,            action: Quit             }
   - { key: N,      mods: Command,            action: SpawnNewInstance }
-  - { key: G,      mods: Command|Control,    action: ToggleFullscreen }
+  - { key: F,      mods: Command|Control,    action: ToggleFullscreen }
   - { key: F,      mods: Command,            action: SearchForward    }
   - { key: B,      mods: Command,            action: SearchBackward   }
 
@@ -762,7 +762,6 @@ key_bindings:
   - { key: L,     mods: Command,       chars: "\x01\x6c" }
   - { key: T,     mods: Command,       chars: "\x01\x63" }
   - { key: S,     mods: Command,       chars: "\x01\x73" }
-  - { key: S,     mods: Command|Shift, chars: "\x01\x13" }
   - { key: Key1,  mods: Command,       chars: "\x01\x31" }
   - { key: Key2,  mods: Command,       chars: "\x01\x32" }
   - { key: Key3,  mods: Command,       chars: "\x01\x33" }
