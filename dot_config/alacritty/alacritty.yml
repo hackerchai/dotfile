@@ -763,6 +763,7 @@ key_bindings:
   - { key: L,     mods: Command,       chars: "\x01\x6c" }
   - { key: T,     mods: Command,       chars: "\x01\x63" }
   - { key: S,     mods: Command,       chars: "\x01\x73" }
+  - { key: T,     mods: Command|shift, chars: "\x01\x5b" }
   - { key: Key1,  mods: Command,       chars: "\x01\x31" }
   - { key: Key2,  mods: Command,       chars: "\x01\x32" }
   - { key: Key3,  mods: Command,       chars: "\x01\x33" }
