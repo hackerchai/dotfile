@@ -32,15 +32,8 @@ tag_symbol = "🔖 "
 only_detached = false
 tag_disabled = false
 
-[time]
-disabled = true
-format = "🕙[\\[ $time \\]]($style) "
-time_format = "%T"
-utc_time_offset = "+8"
-time_range = "0:00:00-24:00:00"
-
 [battery]
-disaled = false
+disabled = false
 full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "💀"
@@ -52,7 +45,3 @@ style = "bold red"
 [[battery.display]]  # 当电量在 10% 到 30% 时以 "bold yellow" 样式显示
 threshold = 30
 style = "bold yellow"
-
-[jobs]
-symbol = "+ "
-threshold = 0
