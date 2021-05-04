@@ -118,20 +118,22 @@ zinit light-mode for \
 
 
 # Zinit Plugins
-zinit wait lucid for \
-        OMZ::lib/termsupport.zsh \
-        OMZ::lib/compfix.zsh \
-        OMZ::lib/completion.zsh \
-        OMZ::lib/grep.zsh \
-        OMZ::lib/directories.zsh \
-        OMZ::lib/spectrum.zsh \
-        OMZ::lib/theme-and-appearance.zsh \
-        OMZ::plugins/autojump/autojump.plugin.zsh \
-        OMZ::plugins/tmux/tmux.plugin.zsh \
-        OMZ::plugins/thefuck/thefuck.plugin.zsh \
-        OMZ::plugins/common-aliases/common-aliases.plugin.zsh \
-        OMZ::plugins/fzf/fzf.plugin.zsh \
-        OMZ::plugins/nvm/nvm.plugin.zsh \
+zinit wait="1" lucid for \
+    OMZ::lib/termsupport.zsh \
+    OMZ::lib/compfix.zsh \
+    OMZ::lib/completion.zsh \
+    OMZ::lib/grep.zsh \
+    OMZ::lib/directories.zsh \
+    OMZ::lib/spectrum.zsh \
+    OMZ::lib/theme-and-appearance.zsh \
+    OMZ::plugins/autojump/autojump.plugin.zsh \
+    OMZ::plugins/nvm/nvm.plugin.zsh \
+    OMZ::plugins/fzf/fzf.plugin.zsh \
+    OMZ::plugins/common-aliases/common-aliases.plugin.zsh \
+    OMZ::plugins/thefuck/thefuck.plugin.zsh \
+    OMZ::plugins/tmux/tmux.plugin.zsh \
+    OMZ::plugins/golang/golang.plugin.zsh \
+    OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
 
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
@@ -140,6 +142,16 @@ zinit wait lucid for \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions
+
+zinit wait="1" lucid light-mode for \
+    wfxr/forgit \
+    MenkeTechnologies/zsh-cargo-completion \
+
+zinit as="completion" for \
+    OMZ::plugins/docker-compose/_docker-compose \
+    OMZ::plugins/docker/_docker \
+    OMZ::plugins/rust/_rust \
+    OMZ::plugins/rustup/_rustup \
 
 # Plugin Settings
 ## Zsh-Auto-Suggestion Config
