@@ -88,9 +88,13 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 # LaTeX
 export PATH="/Library/TeX/texbin:$PATH"
 
-#Go
+# Go
 export GOPROXY=https://goproxy.io,direct
 [[ -s "/Users/hackerchai/.gvm/scripts/gvm" ]] && source "/Users/hackerchai/.gvm/scripts/gvm"
+
+# wasmtime
+export WASMTIME_HOME="$HOME/.wasmtime"
+export PATH="$WASMTIME_HOME/bin:$PATH"
 
 
 ### Added by Zinit's installer
