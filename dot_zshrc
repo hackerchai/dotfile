@@ -101,9 +101,9 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 export TEALDEER_CONFIG_DIR="$HOME/.config/tealdeer/config.toml"
 
 # fzf
-export FZF_DEFAULT_COMMAND="fd --color=never --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --type f"
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-export FZF_ALT_C_COMMAND="fd --color=never --exclude={.git} --hidden --type d --follow"
+export FZF_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --follow"
+export FZF_DEFAULT_OPTS="--height 40% --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+export FZF_ALT_C_COMMAND="fd --color=never --type directory --exclude={.git} --hidden --follow"
 
 
 ### Added by Zinit's installer
