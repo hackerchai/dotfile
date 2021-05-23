@@ -20,12 +20,14 @@ fi
 #
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
-alias rm='rmtrash'
-alias cat="bat"
+alias cat="bat"''
+alias rm="rmtrash" rd="rmtrash" md="mkdir -p"
+alias ls="exa -h"  la="exa -l -a" lt="exa --tree" ll="exa -l" l="exa -h -a"
+alias dfh="df -h"  du="dust" dus="dust -s"
+alias j="z"
 
 export GPG_TTY=$(tty)
 
@@ -136,13 +138,9 @@ zinit wait="1" lucid for \
     OMZ::lib/compfix.zsh \
     OMZ::lib/completion.zsh \
     OMZ::lib/grep.zsh \
-    OMZ::lib/directories.zsh \
     OMZ::lib/spectrum.zsh \
-    OMZ::lib/theme-and-appearance.zsh \
-    OMZ::plugins/autojump/autojump.plugin.zsh \
     OMZ::plugins/nvm/nvm.plugin.zsh \
     OMZ::plugins/fzf/fzf.plugin.zsh \
-    OMZ::plugins/common-aliases/common-aliases.plugin.zsh \
     OMZ::plugins/thefuck/thefuck.plugin.zsh \
     OMZ::plugins/tmux/tmux.plugin.zsh \
     OMZ::plugins/golang/golang.plugin.zsh \
@@ -173,5 +171,5 @@ zinit as="completion" for \
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
-
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
