@@ -103,9 +103,13 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 export TEALDEER_CONFIG_DIR="$HOME/.config/tealdeer/config.toml"
 
 # fzf
-export FZF_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --follow"
+export FZF_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --follow . $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--height 40% --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-export FZF_ALT_C_COMMAND="fd --color=never --type directory --exclude={.git} --hidden --follow"
+export FZF_ALT_C_COMMAND="fd --color=never --type directory --exclude={.git} --hidden --follow . $HOME"
+
+# skim
+export SKIM_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --follow . $HOME"
 
 
 ### Added by Zinit's installer
@@ -141,6 +145,7 @@ zinit wait="1" lucid for \
     OMZ::plugins/tmux/tmux.plugin.zsh \
     OMZ::plugins/golang/golang.plugin.zsh \
     OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
+    OMZ::plugins/fzf/fzf.plugin.zsh \
 
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
@@ -154,7 +159,6 @@ zinit wait lucid for \
 zinit wait="1" lucid light-mode for \
     wfxr/forgit \
     MenkeTechnologies/zsh-cargo-completion \
-    hackerchai/skim-zsh \
 
 zinit as="completion" for \
     OMZ::plugins/docker-compose/_docker-compose \
