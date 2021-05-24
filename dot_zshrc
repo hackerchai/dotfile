@@ -124,9 +124,6 @@ autoload -Uz _zinit
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
@@ -140,7 +137,6 @@ zinit wait="1" lucid for \
     OMZ::lib/grep.zsh \
     OMZ::lib/spectrum.zsh \
     OMZ::plugins/nvm/nvm.plugin.zsh \
-    OMZ::plugins/fzf/fzf.plugin.zsh \
     OMZ::plugins/thefuck/thefuck.plugin.zsh \
     OMZ::plugins/tmux/tmux.plugin.zsh \
     OMZ::plugins/golang/golang.plugin.zsh \
@@ -149,6 +145,7 @@ zinit wait="1" lucid for \
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma/fast-syntax-highlighting \
+ has"brew" blockf atload"zinit creinstall -Q ." $(brew --prefix)/share/zsh/site-functions \
  blockf \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
@@ -157,6 +154,7 @@ zinit wait lucid for \
 zinit wait="1" lucid light-mode for \
     wfxr/forgit \
     MenkeTechnologies/zsh-cargo-completion \
+    hackerchai/skim-zsh \
 
 zinit as="completion" for \
     OMZ::plugins/docker-compose/_docker-compose \
