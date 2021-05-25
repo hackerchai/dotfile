@@ -23,7 +23,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
-alias cat="bat"''
+alias cat="bat"
 alias rm="rmtrash" rd="rmtrash" md="mkdir -p"
 alias ls="exa -h"  la="exa -l -a" lt="exa --tree" ll="exa -l" l="exa -h -a"
 alias dfh="df -h"  du="dust" dus="dust -s"
