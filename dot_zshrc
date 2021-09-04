@@ -21,7 +21,7 @@ fi
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
 alias vim="nvim"
-alias vi="nvim"
+alias vi="amp"
 alias oldvim="vim"
 alias cat="bat"
 alias rm="rmtrash" rd="rmtrash" md="mkdir -p"
