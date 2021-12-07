@@ -367,7 +367,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux"
+    - "zellij"
 
 # Startup directory
 #
