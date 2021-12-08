@@ -758,46 +758,73 @@ key_bindings:
   - { key: K,      mods: Command, mode: ~Vi, chars: "\x0c"            }
   - { key: Key0,   mods: Command,            action: ResetFontSize    }
   - { key: Equals, mods: Command,            action: IncreaseFontSize }
-  - { key: NumpadAdd,    mods: Command,            action: IncreaseFontSize }
+  - { key: NumpadAdd,    mods: Command,      action: IncreaseFontSize }
   - { key: Minus,  mods: Command,            action: DecreaseFontSize }
-  #- { key: K,      mods: Command,            action: ClearHistory     }
+  # - { key: K,      mods: Command|Shift,      action: ClearHistory     }
   - { key: V,      mods: Command,            action: Paste            }
   - { key: C,      mods: Command,            action: Copy             }
   - { key: C,      mods: Command, mode: Vi,  action: ClearSelection   }
   - { key: H,      mods: Command|Control,    action: Hide             }
   - { key: M,      mods: Command,            action: Minimize         }
   - { key: Q,      mods: Command,            action: Quit             }
-  #- { key: W,      mods: Command,            action: Quit             }
+  # - { key: W,      mods: Command|Shift,      action: Quit             }
   - { key: N,      mods: Command,            action: SpawnNewInstance }
   - { key: F,      mods: Command|Control,    action: ToggleFullscreen }
   - { key: F,      mods: Command,            action: SearchForward    }
   - { key: B,      mods: Command,            action: SearchBackward   }
 
   # Tmux Shortcuts
-  - { key: D,     mods: Command,       chars: "\x01\x7c" }
-  - { key: D,     mods: Command|Shift, chars: "\x01\x2d" }
-  - { key: W,     mods: Command,       chars: "\x01\x78" }
-  - { key: H,     mods: Command,       chars: "\x01\x68" }
-  - { key: J,     mods: Command,       chars: "\x01\x6a" }
-  - { key: K,     mods: Command,       chars: "\x01\x6b" }
-  - { key: K,     mods: Command|Shift, chars: "\x01\x62" }
-  - { key: L,     mods: Command,       chars: "\x01\x6c" }
-  - { key: T,     mods: Command,       chars: "\x01\x63" }
-  - { key: S,     mods: Command,       chars: "\x01\x73" }
-  - { key: T,     mods: Command|shift, chars: "\x01\x5b" }
-  - { key: Key1,  mods: Command,       chars: "\x01\x31" }
-  - { key: Key2,  mods: Command,       chars: "\x01\x32" }
-  - { key: Key3,  mods: Command,       chars: "\x01\x33" }
-  - { key: Key4,  mods: Command,       chars: "\x01\x34" }
-  - { key: Key5,  mods: Command,       chars: "\x01\x35" }
-  - { key: Key6,  mods: Command,       chars: "\x01\x36" }
-  - { key: Key7,  mods: Command,       chars: "\x01\x37" }
-  - { key: Key8,  mods: Command,       chars: "\x01\x38" }
-  - { key: Key9,  mods: Command,       chars: "\x01\x39" }
-  - { key: Left,  mods: Command,       chars: "\x01\x48" }
-  - { key: Down,  mods: Command,       chars: "\x01\x4a" }
-  - { key: Up,    mods: Command,       chars: "\x01\x4b" }
-  - { key: Right, mods: Command,       chars: "\x01\x4c" }
+  # - { key: D,     mods: Command,       chars: "\x01\x7c" }
+  # - { key: D,     mods: Command|Shift, chars: "\x01\x2d" }
+  # - { key: W,     mods: Command,       chars: "\x01\x78" }
+  # - { key: H,     mods: Command,       chars: "\x01\x68" }
+  # - { key: J,     mods: Command,       chars: "\x01\x6a" }
+  # - { key: K,     mods: Command,       chars: "\x01\x6b" }
+  # - { key: K,     mods: Command|Shift, chars: "\x01\x62" }
+  # - { key: L,     mods: Command,       chars: "\x01\x6c" }
+  # - { key: T,     mods: Command,       chars: "\x01\x63" }
+  # - { key: S,     mods: Command,       chars: "\x01\x73" }
+  # - { key: T,     mods: Command|shift, chars: "\x01\x5b" }
+  # - { key: Key1,  mods: Command,       chars: "\x01\x31" }
+  # - { key: Key2,  mods: Command,       chars: "\x01\x32" }
+  # - { key: Key3,  mods: Command,       chars: "\x01\x33" }
+  # - { key: Key4,  mods: Command,       chars: "\x01\x34" }
+  # - { key: Key5,  mods: Command,       chars: "\x01\x35" }
+  # - { key: Key6,  mods: Command,       chars: "\x01\x36" }
+  # - { key: Key7,  mods: Command,       chars: "\x01\x37" }
+  # - { key: Key8,  mods: Command,       chars: "\x01\x38" }
+  # - { key: Key9,  mods: Command,       chars: "\x01\x39" }
+  # - { key: Left,  mods: Command,       chars: "\x01\x48" }
+  # - { key: Down,  mods: Command,       chars: "\x01\x4a" }
+  # - { key: Up,    mods: Command,       chars: "\x01\x4b" }
+  # - { key: Right, mods: Command,       chars: "\x01\x4c" }
+
+  # Zellij Shortcuts
+  - { key: D,     mods: Command,       chars: "\x02\x6e" }
+  - { key: D,     mods: Command|Shift, chars: "\x02\x70\x72\x0a" }
+  - { key: W,     mods: Command,       chars: "\x02\x70\x78" }
+  - { key: X,     mods: Command,       chars: "\x02\x74\x78\x02" }
+  - { key: H,     mods: Command,       chars: "\x02\x68\x02" }
+  - { key: J,     mods: Command,       chars: "\x02\x6a\x02" }
+  - { key: K,     mods: Command,       chars: "\x02\x6b\x02" }
+  - { key: L,     mods: Command,       chars: "\x02\x6c\x02" }
+  - { key: T,     mods: Command,       chars: "\x02\x4e\x0a" }
+  - { key: S,     mods: Command,       chars: "\x02\x70\x66" }
+  - { key: S,     mods: Command|shift, chars: "\x02\x6f\x64" }
+  - { key: T,     mods: Command|shift, chars: "\x02\x5b" }
+  - { key: Key1,  mods: Command,       chars: "\x02\x31\x02" }
+  - { key: Key2,  mods: Command,       chars: "\x02\x32\x02" }
+  - { key: Key3,  mods: Command,       chars: "\x02\x33\x02" }
+  - { key: Key4,  mods: Command,       chars: "\x02\x34\x02" }
+  - { key: Key5,  mods: Command,       chars: "\x02\x35\x02" }
+  - { key: Key6,  mods: Command,       chars: "\x02\x36\x02" }
+  - { key: Key7,  mods: Command,       chars: "\x02\x37\x02" }
+  - { key: Key8,  mods: Command,       chars: "\x02\x38\x02" }
+  - { key: Key9,  mods: Command,       chars: "\x02\x39\x02" }
+  - { key: Left,  mods: Command,       chars: "\x02\x72\x68" }
+  - { key: Down,  mods: Command,       chars: "\x02\x72\x6a" }
+  - { key: Up,    mods: Command,       chars: "\x02\x72\x6b" }
+  - { key: Right, mods: Command,       chars: "\x02\x72\x6c" }
   # fix alt
   - { key: A,        mods: Alt,     chars: "\x1ba"                       }
   - { key: B,        mods: Alt,     chars: "\x1bb"                       }
