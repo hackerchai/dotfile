@@ -113,6 +113,9 @@ export FZF_ALT_C_COMMAND="fd --color=never --type directory --exclude={.git} --h
 # skim
 export SKIM_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --follow . $HOME"
 
+# zellij
+export ZELLIJ_CONFIG_FILE="$HOME/.config/zellij/config.yaml"
+
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
