@@ -368,10 +368,10 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/zsh
+  program: /usr/local/bin/nu
   args:
     - -l
-    - -c 
+    - -c
     - "zellij"
 # Startup directory
 #
