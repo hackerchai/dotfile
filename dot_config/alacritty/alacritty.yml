@@ -805,26 +805,26 @@ key_bindings:
 
   # Zellij Shortcuts
   - { key: D,     mods: Command,       chars: "\x02\x6e" }
-  - { key: D,     mods: Command|Shift, chars: "\x02\x70\x72\x0a" }
+  - { key: D,     mods: Command|Shift, chars: "\x02\x70\x72" }
   - { key: W,     mods: Command,       chars: "\x02\x70\x78" }
-  - { key: X,     mods: Command,       chars: "\x02\x74\x78\x02" }
-  - { key: H,     mods: Command,       chars: "\x02\x68\x02" }
-  - { key: J,     mods: Command,       chars: "\x02\x6a\x02" }
-  - { key: K,     mods: Command,       chars: "\x02\x6b\x02" }
-  - { key: L,     mods: Command,       chars: "\x02\x6c\x02" }
+  - { key: X,     mods: Command,       chars: "\x02\x74\x78" }
+  - { key: H,     mods: Command,       chars: "\x02\x68" }
+  - { key: J,     mods: Command,       chars: "\x02\x6a" }
+  - { key: K,     mods: Command,       chars: "\x02\x6b" }
+  - { key: L,     mods: Command,       chars: "\x02\x6c" }
   - { key: T,     mods: Command,       chars: "\x02\x4e\x0a" }
   - { key: S,     mods: Command,       chars: "\x02\x70\x66" }
   - { key: S,     mods: Command|shift, chars: "\x02\x6f\x64" }
   - { key: T,     mods: Command|shift, chars: "\x02\x5b" }
-  - { key: Key1,  mods: Command,       chars: "\x02\x31\x02" }
-  - { key: Key2,  mods: Command,       chars: "\x02\x32\x02" }
-  - { key: Key3,  mods: Command,       chars: "\x02\x33\x02" }
-  - { key: Key4,  mods: Command,       chars: "\x02\x34\x02" }
-  - { key: Key5,  mods: Command,       chars: "\x02\x35\x02" }
-  - { key: Key6,  mods: Command,       chars: "\x02\x36\x02" }
-  - { key: Key7,  mods: Command,       chars: "\x02\x37\x02" }
-  - { key: Key8,  mods: Command,       chars: "\x02\x38\x02" }
-  - { key: Key9,  mods: Command,       chars: "\x02\x39\x02" }
+  - { key: Key1,  mods: Command,       chars: "\x02\x31" }
+  - { key: Key2,  mods: Command,       chars: "\x02\x32" }
+  - { key: Key3,  mods: Command,       chars: "\x02\x33" }
+  - { key: Key4,  mods: Command,       chars: "\x02\x34" }
+  - { key: Key5,  mods: Command,       chars: "\x02\x35" }
+  - { key: Key6,  mods: Command,       chars: "\x02\x36" }
+  - { key: Key7,  mods: Command,       chars: "\x02\x37" }
+  - { key: Key8,  mods: Command,       chars: "\x02\x38" }
+  - { key: Key9,  mods: Command,       chars: "\x02\x39" }
   - { key: Left,  mods: Command,       chars: "\x02\x72\x68" }
   - { key: Down,  mods: Command,       chars: "\x02\x72\x6a" }
   - { key: Up,    mods: Command,       chars: "\x02\x72\x6b" }

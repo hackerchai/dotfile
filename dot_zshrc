@@ -28,6 +28,8 @@ alias rm="rmtrash" rd="rmtrash" md="mkdir -p"
 alias ls="exa -h"  la="exa -l -a" lt="exa --tree" ll="exa -l" l="exa -h -a"
 alias dfh="df -h"  du="dust" dus="dust -s"
 alias j="z"
+alias docker='lima nerdctl "$@"'
+alias docker-compose='lima nerdctl compose "$@"'
 
 export GPG_TTY=$(tty)
 
