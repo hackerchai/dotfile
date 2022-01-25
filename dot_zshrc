@@ -52,6 +52,14 @@ proxy () {
   echo "Proxy on"
 }
 
+wg_home () {
+    sudo WG_QUICK_USERSPACE_IMPLEMENTATION=boringtun WG_SUDO=1 wg-quick up  ~/wireguard/home/home.conf
+}
+
+wg_home_off () {
+    sudo WG_QUICK_USERSPACE_IMPLEMENTATION=boringtun WG_SUDO=1 wg-quick down  ~/wireguard/home/home.conf
+}
+
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -118,6 +126,8 @@ export SKIM_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,
 # zellij
 export ZELLIJ_CONFIG_FILE="$HOME/.config/zellij/config.yaml"
 
+# wg-quiick
+export WG_QUICK_USERSPACE_IMPLEMENTATION="boringtun"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
