@@ -21,7 +21,7 @@ fi
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
 alias vim="nvim"
-alias vi="amp"
+alias vi="hx"
 alias oldvim="vim"
 alias cat="bat"
 alias rm="rmtrash" rd="rmtrash" md="mkdir -p"
@@ -30,6 +30,12 @@ alias dfh="df -h"  du="dust" dus="dust -s"
 alias j="z"
 alias docker='lima nerdctl "$@"'
 alias docker-compose='lima nerdctl compose "$@"'
+
+# GCC Config
+alias gcc="gcc-11"
+alias g++="g++-11"
+alias cc="gcc-11"
+alias c++="c++-11"
 
 export GPG_TTY=$(tty)
 
@@ -66,10 +72,20 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export SCCACHE_DIR="$HOME/.cargo/sccache"
 export RUSTC_WRAPPER="sccache"
 
+# GCC Varaible
+export CFLAGS="-std=c99 -fPIC"
+export CXXFLAGS="-std=c++14 -march=native -mtune=native -fPIC"
+export CPPFLAGS="-std=c++14 -Os -march=native -mtune=native -fPIC"
+export LDFLAGS="-Os -shared"
+export SRC_DIR="./src"
+export DEST_DIR="./dest"
+export MAKEFLAGS="-j12"
+
 # Java 8
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home
-export JAVA_HOME=$JAVA_8_HOME
-export PATH=$JAVA_HOME/bin:$PATH:.
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
+export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/jdk-18.jdk/Contents/Home
+export JAVA_HOME=$JAVA_17_HOME
+export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 # Tomcat 9
@@ -102,7 +118,8 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 
 # Go
-export GOPROXY=https://goproxy.io,direct
+export GOPROXY=https://goproxy.cn
+export GO111MODULE=on
 [[ -s "/Users/hackerchai/.gvm/scripts/gvm" ]] && source "/Users/hackerchai/.gvm/scripts/gvm"
 export GOPATH=/Users/hackerchai/go
 export PATH=$PATH:${GOPATH//://bin:}/bin
