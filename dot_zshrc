@@ -156,4 +156,3 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
 eval "$(sheldon source)"
-eval "$(starship init zsh)"

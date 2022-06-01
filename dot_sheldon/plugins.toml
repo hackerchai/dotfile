@@ -33,6 +33,9 @@ apply = ["source"]
 github = "chrissicool/zsh-256color"
 apply = ["source"]
 
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
+
 [plugins.forgit]
 github = "wfxr/forgit"
 [plugins.fzf-tab]
