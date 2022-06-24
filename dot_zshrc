@@ -72,13 +72,13 @@ export SCCACHE_DIR="$HOME/.cargo/sccache"
 export RUSTC_WRAPPER="sccache"
 
 # GCC Varaible
-export CFLAGS="-std=c99 -fPIC"
-export CXXFLAGS="-std=c++14 -march=native -mtune=native -fPIC"
-export CPPFLAGS="-std=c++14 -Os -march=native -mtune=native -fPIC"
-export LDFLAGS="-Os -shared"
-export SRC_DIR="./src"
-export DEST_DIR="./dest"
-export MAKEFLAGS="-j12"
+#export CFLAGS="-std=c99 -fPIC"
+#export CXXFLAGS="-std=c++14 -march=native -mtune=native -fPIC"
+#export CPPFLAGS="-std=c++14 -Os -march=native -mtune=native -fPIC"
+#export LDFLAGS="-Os -shared"
+#export SRC_DIR="./src"
+#export DEST_DIR="./dest"
+#export MAKEFLAGS="-j12"
 
 # PNPM
 export PNPM_HOME="/Users/hackerchai/Library/pnpm"
@@ -121,6 +121,10 @@ export GOPROXY=https://goproxy.cn
 export GO111MODULE=on
 export GOPATH=/Users/hackerchai/go
 export PATH=$PATH:${GOPATH//://bin:}/bin
+
+# vcpkg
+export VCPKG_ROOT="$HOME/Binaries/vcpkg"
+export PATH="$HOME/Binaries/vcpkg:$PATH"
 
 # wasmtime
 export WASMTIME_HOME="$HOME/.wasmtime"
