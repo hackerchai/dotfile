@@ -86,8 +86,9 @@ export PATH="$PNPM_HOME:$PATH"
 
 # Java 8
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
+export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.15.jdk/Centents/Home
 export JAVA_18_HOME=/Library/Java/JavaVirtualMachines/jdk-18.0.1.1.jdk/Contents/Home
-export JAVA_HOME=$JAVA_18_HOME
+export JAVA_HOME=$JAVA_11_HOME
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
@@ -121,6 +122,10 @@ export GOPROXY=https://goproxy.cn
 export GO111MODULE=on
 export GOPATH=/Users/hackerchai/go
 export PATH=$PATH:${GOPATH//://bin:}/bin
+export CGO_CPPFLAGS="-Wno-error -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-builtin-requires-header"
+
+# anaconda
+export PATH="/Users/hackerchai/anaconda3/bin:$PATH"
 
 # vcpkg
 export VCPKG_ROOT="$HOME/Binaries/vcpkg"
