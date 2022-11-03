@@ -1,0 +1,78 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+apply = ["defer"]
+
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+apply = ["source"]
+
+[plugins.compinit]
+inline = 'autoload -Uz compinit && zsh-defer compinit && compinit'
+
+[plugins.ohmyzsh-lib]
+github = "ohmyzsh/ohmyzsh"
+dir = "lib"
+use = ["termsupport.zsh","compfix.zsh","completion.zsh","grep.zsh","spectrum.zsh"]
+apply = ["source"]
+
+[plugins.zsh-256color]
+github = "chrissicool/zsh-256color"
+apply = ["source"]
+
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
+
+[plugins.forgit]
+github = "wfxr/forgit"
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+[plugins.zsh-aliases-exa]
+github = "DarrinTisdale/zsh-aliases-exa"
+[plugins.atuin]
+github = "ellie/atuin"
+[plugins.zoxide]
+remote = "https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/zoxide.plugin.zsh"
+[plugins.zsh-cargo-completion]
+github = "MenkeTechnologies/zsh-cargo-completion"
+[plugins.fast-syntax-highlighting]
+github = "z-shell/fast-syntax-highlighting"
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+[plugins.enhancd]
+github = "b4b4r07/enhancd"
+[plugins.zsh-activate-py-environment]
+github = "se-jaeger/zsh-activate-py-environment"
+
+[plugins.ohmyzsh-plugins]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins"
+use = [
+    "dotenv/*.zsh",
+    "encode64/*.zsh",
+    "extract/*.zsh",
+    "fzf/*.zsh",
+    "gitignore/*.zsh",
+    "golang/*.zsh",
+    "gpg-agent/*.zsh",
+    "python/*.zsh",
+    "thefuck/*.zsh",
+    "command-not-found/*.zsh",
+    "docker-compose/*.zsh",
+    "fnm/*.zsh",
+]
