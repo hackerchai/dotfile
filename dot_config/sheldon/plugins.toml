@@ -75,4 +75,5 @@ use = [
     "command-not-found/*.zsh",
     "docker-compose/*.zsh",
     "fnm/*.zsh",
+    "gpg-agent/*.zsh"
 ]
