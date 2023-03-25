@@ -168,7 +168,7 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  AppleFontSmoothing: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -378,9 +378,6 @@ shell:
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
 #working_directory: None
-
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: false
 
 mouse:
   # Click settings
