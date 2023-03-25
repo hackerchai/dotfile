@@ -8,7 +8,7 @@ file_ignore = [
 ]
 
 [openai]
-api_key = "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"
+api_key = "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"
 model = "gpt-3.5-turbo"
 retries = 2
 
