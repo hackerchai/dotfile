@@ -27,8 +27,8 @@ alias cat="bat"
 alias rm="rmtrash" rd="rmtrash" md="mkdir -p"
 alias dfh="df -h"  du="dust" dus="dust -s"
 alias j="z"
-alias docker='lima nerdctl "$@"'
-alias docker-compose='lima nerdctl compose "$@"'
+alias limad='lima nerdctl "$@"'
+alias limadc='lima nerdctl compose "$@"'
 
 # GCC Config
 alias gcc="gcc-11"
@@ -102,7 +102,7 @@ export PATH="$PNPM_HOME:$PATH"
 # Java 8
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.15.jdk/Centents/Home
-export JAVA_18_HOME=/Library/Java/JavaVirtualMachines/jdk-18.0.1.1.jdk/Contents/Home
+export JAVA_19_HOME=/Library/Java/JavaVirtualMachines/jdk-19/Contents/Home
 export JAVA_HOME=$JAVA_8_HOME
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
