@@ -19,7 +19,7 @@
 	defaultBranch = main
 
 [core]
-	editor = nvim
+	editor = hx
 	pager = delta
 
 [interactive]
