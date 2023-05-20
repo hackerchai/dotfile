@@ -24,7 +24,7 @@ alias vim="nvim"
 alias vi="hx"
 alias oldvim="vim"
 alias cat="bat"
-alias rm="rmtrash" rd="rmtrash" md="mkdir -p"
+alias rm="trash" rd="trash -r" md="mkdir -p"
 alias dfh="df -h"  du="dust" dus="dust -s"
 alias j="z"
 alias limad='lima nerdctl "$@"'
@@ -86,6 +86,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export SCCACHE_DIR="$HOME/.cargo/sccache"
 export RUSTC_WRAPPER="sccache"
 
+# Rye
+source "$HOME/.rye/env"
+
 # GCC Varaible
 #export CFLAGS="-std=c99 -fPIC"
 #export CXXFLAGS="-std=c++14 -march=native -mtune=native -fPIC"
@@ -101,8 +104,8 @@ export PATH="$PNPM_HOME:$PATH"
 
 # Java 8
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
-export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.15.jdk/Centents/Home
-export JAVA_19_HOME=/Library/Java/JavaVirtualMachines/jdk-19/Contents/Home
+export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Centents/Home
+export JAVA_20_HOME=/Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
 export JAVA_HOME=$JAVA_8_HOME
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
