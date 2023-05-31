@@ -89,6 +89,10 @@ export RUSTC_WRAPPER="sccache"
 # Rye
 source "$HOME/.rye/env"
 
+# Wezterm Config
+export XDG_CONFIG_HOME=~/.config
+export WEZTERM_CONFIG_FILE=~/.config/wezterm/wezterm.lua 
+
 # GCC Varaible
 #export CFLAGS="-std=c99 -fPIC"
 #export CXXFLAGS="-std=c++14 -march=native -mtune=native -fPIC"
@@ -171,7 +175,7 @@ export FZF_ALT_C_COMMAND="fd --color=never --type directory --exclude={.git} --h
 export SKIM_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --follow . $HOME"
 
 # zellij
-export ZELLIJ_CONFIG_FILE="$HOME/.config/zellij/config.yaml"
+export ZELLIJ_CONFIG_FILE="$HOME/.config/zellij/config.kdl"
 
 # wg-quiick
 export WG_QUICK_USERSPACE_IMPLEMENTATION="boringtun"

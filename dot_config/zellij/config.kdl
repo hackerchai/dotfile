@@ -355,3 +355,4 @@ plugins {
     status-bar { path "status-bar"; }
     strider { path "strider"; }
 }
+
