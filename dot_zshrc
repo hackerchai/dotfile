@@ -29,12 +29,17 @@ alias dfh="df -h"  du="dust" dus="dust -s"
 alias j="z"
 alias limad='lima nerdctl "$@"'
 alias limadc='lima nerdctl compose "$@"'
+alias ls="lsd"
+alias l="ls -l"
+alias la="ls -a"
+alias lla="ls -la"
+alias lt="ls --tree"
 
 # GCC Config
-alias gcc="gcc-11"
-alias g++="g++-11"
-alias cc="gcc-11"
-alias c++="c++-11"
+alias gcc="gcc-13"
+alias g++="g++-13"
+alias cc="gcc-13"
+alias c++="c++-13"
 
 export GPG_TTY=$(tty)
 
@@ -83,8 +88,9 @@ rga-fzf() {
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
-export SCCACHE_DIR="$HOME/.cargo/sccache"
+export SCCACHE_DIR="$HOME/.cache/sccache"
 export RUSTC_WRAPPER="sccache"
+export CARGO_HTTP_MULTIPLEXING="false"
 
 # Rye
 source "$HOME/.rye/env"
@@ -148,11 +154,11 @@ export PATH="/Library/TeX/texbin:$PATH"
 export GOPROXY=https://goproxy.cn
 export GO111MODULE=on
 export GOPATH=/Users/hackerchai/go
-export PATH=$PATH:${GOPATH//://bin:}/bin
 export CGO_CPPFLAGS="-Wno-error -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-builtin-requires-header"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # anaconda
-export PATH="/Users/hackerchai/anaconda3/bin:$PATH"
+#export PATH="/Users/hackerchai/anaconda3/bin:$PATH"
 
 # vcpkg
 export VCPKG_ROOT="$HOME/Binaries/vcpkg"
