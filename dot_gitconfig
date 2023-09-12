@@ -19,7 +19,7 @@
 	defaultBranch = main
 
 [core]
-	editor = hx
+	editor = vim
 	pager = delta
 
 [interactive]
@@ -66,3 +66,7 @@
 # `git dft` is less to type than `git difftool`.
 [alias]
 	dft = difftool
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[push]
+	autoSetupRemote = true
