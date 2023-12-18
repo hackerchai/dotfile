@@ -3,12 +3,6 @@
 	name = hackerchai
 	signingkey = C8F8CE8A31B9CB559D8A555B8D63427716F4A85A
 
-[http]
-	proxy = http://127.0.0.1:1081
-
-[https]
-	proxy = http://127.0.0.1:1081
-
 [commit]
 	gpgsign = true
 
@@ -66,7 +60,8 @@
 # `git dft` is less to type than `git difftool`.
 [alias]
 	dft = difftool
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+	count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #"
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

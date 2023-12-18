@@ -5,20 +5,9 @@ name = 'Eason Chai'
 email = 'i@hackerchai.com'
 vcs = 'git'
 
-[http]
-proxy = "socks5://127.0.0.1:1080"
-
-[https]
-proxy = "socks5://127.0.0.1:1080"
-
 [profile.release]
 lto = true
 opt-level = 'z'
 panic = 'abort'
 # strip = 'symbols'
 codegen-units = 1
-
-[build]
-rustc-wrapper = "/Users/hackerchai/.cargo/sccache"
-jobs = 6
-

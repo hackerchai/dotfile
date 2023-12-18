@@ -12,6 +12,7 @@ fi
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
+export CROSSARCH="x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -44,9 +45,9 @@ alias c++="c++-13"
 export GPG_TTY=$(tty)
 
 # Proxy Settting
-export https_proxy=http://127.0.0.1:1081
-export http_proxy=http://127.0.0.1:1081
-export all_proxy=http://127.0.0.1:1081
+# export https_proxy=http://127.0.0.1:1081
+# export http_proxy=http://127.0.0.1:1081
+# export all_proxy=http://127.0.0.1:1081
 
 noproxy () {
   unset http_proxy
@@ -151,11 +152,16 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 
 # Go
-export GOPROXY=https://goproxy.cn
 export GO111MODULE=on
+export GOPROXY=https://goproxy.cn,direct
 export GOPATH=/Users/hackerchai/go
+export GOPRIVATE=github.com/zeabur/*
 export CGO_CPPFLAGS="-Wno-error -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-builtin-requires-header"
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# protobuf
+alias protoc=/Users/hackerchai/Tools/protoc-24.3-osx-x86_64/bin/protoc
+export PATH="$HOME/Tools/protoc-24.3-osx-x86_64/bin:$PATH"
 
 # anaconda
 #export PATH="/Users/hackerchai/anaconda3/bin:$PATH"
@@ -164,12 +170,18 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 export VCPKG_ROOT="$HOME/Binaries/vcpkg"
 export PATH="$HOME/Binaries/vcpkg:$PATH"
 
+# LLVM
+export PATH="/usr/local/opt/llvm@16/bin:$PATH"
+
 # wasmtime
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
 
 # tldr
 export TEALDEER_CONFIG_DIR="$HOME/.config/tealdeer/config.toml"
+
+# docker
+export DOCKER_BUILDKIT=1
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --follow . $HOME"
@@ -197,6 +209,12 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
+# GPG SSH
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
 export ZSH="$HOME/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 eval "$(sheldon source)"
 eval "$(fnm env --use-on-cd)"
+
+[[ -s "/Users/hackerchai/.gvm/scripts/gvm" ]] && source "/Users/hackerchai/.gvm/scripts/gvm"

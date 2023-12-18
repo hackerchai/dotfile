@@ -1,10 +1,4 @@
-Host github.com
-   # 如果用默认端口，这里是 github.com，如果想用443端口，这里就是 ssh.github.com 详见 https://help.github.com/articles/using-ssh-over-the-https-port/
-   User git
-   # 如果是 HTTP 代理，把下面这行取消注释，并把 proxyport 改成自己的 http 代理的端口
-   #ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=7890
-   # 如果是 socks5 代理，则把下面这行取消注释，并把 6666 改成自己 socks5 代理的端口
-   ProxyCommand nc -v -x 127.0.0.1:1080 %h %p
+Include ~/.orbstack/ssh/config
 
 Host *
   UseKeychain yes
