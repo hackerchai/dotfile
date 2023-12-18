@@ -1,9 +1,0 @@
-Include ~/.orbstack/ssh/config
-
-Host *
-  UseKeychain yes
-  AddKeysToAgent yes
-  ServerAliveInterval 300
-  TCPKeepAlive yes
-  IdentityFile ~/.ssh/id_rsa
-
