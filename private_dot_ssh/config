@@ -1,7 +1,12 @@
 Include ~/.orbstack/ssh/config
 
+Host orb
+  HostName orb
+  User hackerchai
+
 Host *
-  UseKeychain yes
   AddKeysToAgent yes
   ServerAliveInterval 300
   TCPKeepAlive yes
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/gpg_key_ssh.pub

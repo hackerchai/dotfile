@@ -2,7 +2,6 @@
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='vim'
@@ -11,7 +10,7 @@ else
 fi
 
 # Compilation flags
-export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch arm64"
 export CROSSARCH="x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -26,21 +25,25 @@ alias vi="hx"
 alias oldvim="vim"
 alias cat="bat"
 alias rm="trash" rd="trash -r" md="mkdir -p"
-alias dfh="df -h"  du="dust" dus="dust -s"
+alias dfh="df -h"  du="dua"
 alias j="z"
 alias limad='lima nerdctl "$@"'
 alias limadc='lima nerdctl compose "$@"'
-alias ls="lsd"
+alias ls="eza --icons=always"
 alias l="ls -l"
-alias la="ls -a"
+alias la="ls -a"1
 alias lla="ls -la"
 alias lt="ls --tree"
+alias ac="aicommit2 --all"
 
 # GCC Config
-alias gcc="gcc-13"
-alias g++="g++-13"
-alias cc="gcc-13"
-alias c++="c++-13"
+alias gcc="gcc-14"
+alias g++="g++-14"
+alias cc="gcc-14"
+alias c++="c++-14"
+
+# SSH Alias
+alias qiniu='ssh chaiyisheng@chaiyisheng@10.56.35.38@125.94.43.42 -p 2222'
 
 export GPG_TTY=$(tty)
 
@@ -61,6 +64,20 @@ proxy () {
   export http_proxy=http://127.0.0.1:1081
   export all_proxy=http://127.0.0.1:1081
   echo "Proxy on"
+}
+
+# Personal script
+export PATH="~/Binaries/script/:$PATH"
+export PATH="~/Binaries/:$PATH"
+
+# Yazi
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 wg_home () {
@@ -86,6 +103,8 @@ rga-fzf() {
 	xdg-open "$file"
 }
 
+# Brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -93,14 +112,18 @@ export SCCACHE_DIR="$HOME/.cache/sccache"
 export RUSTC_WRAPPER="sccache"
 export CARGO_HTTP_MULTIPLEXING="false"
 
-# Rye
-source "$HOME/.rye/env"
+# llvm
+export PATH="$(brew --prefix llvm@18)/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export DYLD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$DYLD_LIBRARY_PATH
 
 # Wezterm Config
 export XDG_CONFIG_HOME=~/.config
-export WEZTERM_CONFIG_FILE=~/.config/wezterm/wezterm.lua 
+export WEZTERM_CONFIG_FILE=~/.config/wezterm/wezterm.lua
 
 # GCC Varaible
+#export CC=clang CXX=clang++
 #export CFLAGS="-std=c99 -fPIC"
 #export CXXFLAGS="-std=c++14 -march=native -mtune=native -fPIC"
 #export CPPFLAGS="-std=c++14 -Os -march=native -mtune=native -fPIC"
@@ -109,22 +132,20 @@ export WEZTERM_CONFIG_FILE=~/.config/wezterm/wezterm.lua
 #export DEST_DIR="./dest"
 #export MAKEFLAGS="-j12"
 
-# PNPM
-export PNPM_HOME="/Users/hackerchai/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# QT 5
+export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/qt@5/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/qt@5/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/qt@5/lib/pkgconfig"
 
 # Java 8
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
 export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Centents/Home
-export JAVA_20_HOME=/Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
-export JAVA_HOME=$JAVA_8_HOME
+export JAVA_22_HOME=/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home
+export JAVA_HOME=$JAVA_22_HOME
+export MATLAB_JAVA=$JAVA_HOME
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-
-# Oracle OCI
-export ORACLE_HOME=~/binaries/oracle/instantclient_19_8
-export TNS_ADMIN=$ORACLE_HOME/network/admin
-export PATH=$ORACLE_HOME:$PATH
 
 # Tomcat 9
 export PATH="$HOME/.local/bin:$PATH"
@@ -154,24 +175,18 @@ export PATH="/Library/TeX/texbin:$PATH"
 # Go
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn,direct
-export GOPATH=/Users/hackerchai/go
-export GOPRIVATE=github.com/zeabur/*
+# export GOPATH=/Users/hackerchai/go
+export GOPRIVATE=github.com/qbox
+export GOSUMDB=sum.golang.org
 export CGO_CPPFLAGS="-Wno-error -Wno-nullability-completeness -Wno-expansion-to-defined -Wno-builtin-requires-header"
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# llgo
+export LLGOROOT="/Users/hackerchai/Developer/Work/Qiniu/llgo"
 
 # protobuf
 alias protoc=/Users/hackerchai/Tools/protoc-24.3-osx-x86_64/bin/protoc
 export PATH="$HOME/Tools/protoc-24.3-osx-x86_64/bin:$PATH"
-
-# anaconda
-#export PATH="/Users/hackerchai/anaconda3/bin:$PATH"
-
-# vcpkg
-export VCPKG_ROOT="$HOME/Binaries/vcpkg"
-export PATH="$HOME/Binaries/vcpkg:$PATH"
-
-# LLVM
-export PATH="/usr/local/opt/llvm@16/bin:$PATH"
 
 # wasmtime
 export WASMTIME_HOME="$HOME/.wasmtime"
@@ -189,6 +204,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--height 40% --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 export FZF_ALT_C_COMMAND="fd --color=never --type directory --exclude={.git} --hidden --follow . $HOME"
 
+# eza
+export EZA_CONFIG_DIR="$HOME/.config/eza"
+
 # skim
 export SKIM_DEFAULT_COMMAND="fd --color=never --type file --exclude={.git,.idea,.vscode,pkg,node_modules,vendor,bin,build} --hidden --follow . $HOME"
 
@@ -202,19 +220,44 @@ export WG_QUICK_USERSPACE_IMPLEMENTATION="boringtun"
 ## Zsh-Auto-Suggestion Config
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_MANUAL_REBIND=true
 ## fzf-tab Config
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
+# Terminal behavior settings
+DISABLE_AUTO_TITLE="true"
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+unsetopt PROMPT_SP
 
 # GPG SSH
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.SSH
+
+# Cargo
+. "$HOME/.cargo/env"
+
+# Rye
+source "$HOME/.rye/env"
+
+# Mise
+eval "$(/opt/homebrew/bin/mise activate zsh)"
+export MISE_DISABLE_TOOLS="node pnpm uv"
 
 export ZSH="$HOME/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 eval "$(sheldon source)"
-eval "$(fnm env --use-on-cd)"
 
-[[ -s "/Users/hackerchai/.gvm/scripts/gvm" ]] && source "/Users/hackerchai/.gvm/scripts/gvm"
+# Starship initialization
+eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/hackerchai/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

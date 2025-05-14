@@ -1,7 +1,7 @@
 [user]
 	email = i@hackerchai.com
 	name = hackerchai
-	signingkey = C8F8CE8A31B9CB559D8A555B8D63427716F4A85A
+	signingkey = 2808CA087B163A86
 
 [commit]
 	gpgsign = true
@@ -14,7 +14,7 @@
 
 [core]
 	editor = vim
-	pager = delta
+  pager = delta
 
 [interactive]
 	diffFilter = delta --color-only
@@ -53,14 +53,19 @@
 [difftool "difftastic"]
 	cmd = difft "$LOCAL" "$REMOTE"
 
-# Use a pager for large output, just like other git commands.
 [pager]
+  # Use a pager for large output, just like other git commands.
+  # consistent with the behaviour of `git diff`.
 	difftool = true
 
-# `git dft` is less to type than `git difftool`.
 [alias]
-	dft = difftool
-	count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #"
+  count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #"
+  # `git log` with patches shown with difftastic.
+  dl = -c diff.external=difft log -p --ext-diff
+  # Show the most recent commit with difftastic.
+  ds = -c diff.external=difft show --ext-diff
+  # `git diff` with difftastic.
+  dft = -c diff.external=difft diff
 [push]
   autoSetupRemote = true
 [url "ssh://git@github.com/"]

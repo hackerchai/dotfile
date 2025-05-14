@@ -1,0 +1,18 @@
+# cargo-features = ['strip']
+
+[cargo-new]
+name = 'Eason Chai'
+email = 'i@hackerchai.com'
+vcs = 'git'
+
+#[profile.release]
+#lto = true
+#opt-level = 'z'
+#panic = 'abort'
+# strip = 'symbols'
+#codegen-units = 1
+
+
+[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=--ld-path=wild"]

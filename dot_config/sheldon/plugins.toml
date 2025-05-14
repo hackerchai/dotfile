@@ -40,8 +40,12 @@ inline = 'eval "$(starship init zsh)"'
 github = "wfxr/forgit"
 [plugins.fzf-tab]
 github = "Aloxaf/fzf-tab"
+[plugins.fzf-zsh]
+github = "unixorn/fzf-zsh-plugin"
 [plugins.zsh-aliases-exa]
 github = "DarrinTisdale/zsh-aliases-exa"
+[plugin.zsh-aliases-lsd]
+github = "yuhonas/zsh-aliases-lsd"
 [plugins.atuin]
 github = "ellie/atuin"
 [plugins.zoxide]
@@ -58,6 +62,8 @@ github = "zsh-users/zsh-completions"
 github = "b4b4r07/enhancd"
 [plugins.zsh-activate-py-environment]
 github = "se-jaeger/zsh-activate-py-environment"
+[plugins.mcfly]
+remote = "https://github.com/cantino/mcfly/blob/master/mcfly.zsh"
 
 [plugins.ohmyzsh-plugins]
 github = "ohmyzsh/ohmyzsh"
@@ -75,5 +81,6 @@ use = [
     "command-not-found/*.zsh",
     "docker-compose/*.zsh",
     "fnm/*.zsh",
-    "gpg-agent/*.zsh"
+    "gpg-agent/*.zsh",
+    "brew/*.zsh"
 ]
