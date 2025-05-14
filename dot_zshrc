@@ -234,13 +234,6 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 unsetopt PROMPT_SP
 
-# GPG SSH
-gpgconf --launch gpg-agent
-export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.SSH
-
-# Cargo
-. "$HOME/.cargo/env"
-
 # Rye
 source "$HOME/.rye/env"
 
@@ -250,9 +243,6 @@ export MISE_DISABLE_TOOLS="node pnpm uv"
 
 export ZSH="$HOME/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 eval "$(sheldon source)"
-
-# Starship initialization
-eval "$(starship init zsh)"
 
 # pnpm
 export PNPM_HOME="/Users/hackerchai/Library/pnpm"

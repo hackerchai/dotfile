@@ -26,7 +26,7 @@ inline = 'autoload -Uz compinit && zsh-defer compinit && compinit'
 [plugins.ohmyzsh-lib]
 github = "ohmyzsh/ohmyzsh"
 dir = "lib"
-use = ["termsupport.zsh","compfix.zsh","completion.zsh","grep.zsh","spectrum.zsh"]
+use = ["termsupport.zsh","compfix.zsh","completion.zsh","grep.zsh","spectrum.zsh", "functions.zsh"]
 apply = ["source"]
 
 [plugins.zsh-256color]
@@ -65,9 +65,6 @@ github = "se-jaeger/zsh-activate-py-environment"
 [plugins.mcfly]
 remote = "https://github.com/cantino/mcfly/blob/master/mcfly.zsh"
 
-[plugins.oh-my-zsh]
-github = "ohmyzsh/ohmyzsh"
-use = ["lib/functions.zsh"]
 
 [plugins.ohmyzsh-plugins]
 github = "ohmyzsh/ohmyzsh"
@@ -86,5 +83,6 @@ use = [
     "docker-compose/*.zsh",
     "fnm/*.zsh",
     "brew/*.zsh",
-    "uv/*.zsh"
+    "uv/*.zsh",
+    "urltools/*.zsh"
 ]
