@@ -67,7 +67,7 @@ remote = "https://github.com/cantino/mcfly/blob/master/mcfly.zsh"
 
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
-use = ["lib/*.zsh"]
+use = ["lib/functions.zsh"]
 
 [plugins.ohmyzsh-plugins]
 github = "ohmyzsh/ohmyzsh"
@@ -86,6 +86,5 @@ use = [
     "docker-compose/*.zsh",
     "fnm/*.zsh",
     "brew/*.zsh",
-    "urltools/*.zsh",
     "uv/*.zsh"
 ]
