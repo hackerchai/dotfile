@@ -1,0 +1,21 @@
+# fullscreen = true
+font-family = "Maple Mono NF CN"
+font-size = 18
+font-thicken = true
+theme = dark:tokyonight,light:ayu_light
+link-url = true
+clipboard-paste-protection = true
+auto-update = off
+cursor-style = block
+adjust-cell-height = 35%
+background-opacity = 0.96
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+window-save-state = always
+window-colorspace = "display-p3"
+macos-titlebar-style = transparent
+window-height = 36
+window-width = 120
+window-vsync = true
+shell-integration = zsh
+
