@@ -65,6 +65,10 @@ github = "se-jaeger/zsh-activate-py-environment"
 [plugins.mcfly]
 remote = "https://github.com/cantino/mcfly/blob/master/mcfly.zsh"
 
+[plugins.oh-my-zsh]
+github = "ohmyzsh/ohmyzsh"
+use = ["lib/*.zsh"]
+
 [plugins.ohmyzsh-plugins]
 github = "ohmyzsh/ohmyzsh"
 dir = "plugins"
@@ -81,6 +85,7 @@ use = [
     "command-not-found/*.zsh",
     "docker-compose/*.zsh",
     "fnm/*.zsh",
-    "gpg-agent/*.zsh",
-    "brew/*.zsh"
+    "brew/*.zsh",
+    "urltools/*.zsh",
+    "uv/*.zsh"
 ]
