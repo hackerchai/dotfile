@@ -1,0 +1,6 @@
+[tools]
+go = "system"
+python = "3.13.2"
+
+[settings]
+python.uv_venv_auto = true
