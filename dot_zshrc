@@ -36,21 +36,9 @@ alias lla="ls -la"
 alias lt="ls --tree"
 alias ac="aicommit2 --all"
 
-# GCC Config
-alias gcc="gcc-14"
-alias g++="g++-14"
-alias cc="gcc-14"
-alias c++="c++-14"
-
-# SSH Alias
-alias qiniu='ssh chaiyisheng@chaiyisheng@10.56.35.38@125.94.43.42 -p 2222'
-
 export GPG_TTY=$(tty)
 
 # Proxy Settting
-# export https_proxy=http://127.0.0.1:1081
-# export http_proxy=http://127.0.0.1:1081
-# export all_proxy=http://127.0.0.1:1081
 
 noproxy () {
   unset http_proxy
@@ -122,22 +110,6 @@ export DYLD_LIBRARY_PATH=/usr/lib:/usr/local/lib:$DYLD_LIBRARY_PATH
 export XDG_CONFIG_HOME=~/.config
 export WEZTERM_CONFIG_FILE=~/.config/wezterm/wezterm.lua
 
-# GCC Varaible
-#export CC=clang CXX=clang++
-#export CFLAGS="-std=c99 -fPIC"
-#export CXXFLAGS="-std=c++14 -march=native -mtune=native -fPIC"
-#export CPPFLAGS="-std=c++14 -Os -march=native -mtune=native -fPIC"
-#export LDFLAGS="-Os -shared"
-#export SRC_DIR="./src"
-#export DEST_DIR="./dest"
-#export MAKEFLAGS="-j12"
-
-# QT 5
-export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/qt@5/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/qt@5/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/qt@5/lib/pkgconfig"
-
 # Java 8
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
 export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Centents/Home
@@ -147,14 +119,6 @@ export MATLAB_JAVA=$JAVA_HOME
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-# Tomcat 9
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/Library/apache-tomcat-9.0.38/bin:$PATH"
-
-# Maven
-export M3_HOME="$HOME/Library/apache-maven-3.6.3"
-export PATH="$M3_HOME/bin:$PATH"
-
 # Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -162,9 +126,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig:$PKG_CONFIG_PATH"
 # Curl
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-# APR
-export PATH="/usr/local/opt/apr/bin:$PATH"
 
 # SQLite
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
