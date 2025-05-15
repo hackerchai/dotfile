@@ -68,5 +68,5 @@
   dft = -c diff.external=difft diff
 [push]
   autoSetupRemote = true
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+[url "https://github.com/"]
+	insteadOf = git@github.com:
