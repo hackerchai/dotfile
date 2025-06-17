@@ -35,19 +35,17 @@ apply = ["source"]
 
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
+[plugins.mise]
+inline = 'eval "$(mise activate zsh)"'
 
+[plugins.eza]
+github = "z-shell/zsh-eza"
 [plugins.forgit]
 github = "wfxr/forgit"
 [plugins.fzf-tab]
 github = "Aloxaf/fzf-tab"
 [plugins.fzf-zsh]
 github = "unixorn/fzf-zsh-plugin"
-[plugins.zsh-aliases-exa]
-github = "DarrinTisdale/zsh-aliases-exa"
-[plugin.zsh-aliases-lsd]
-github = "yuhonas/zsh-aliases-lsd"
-[plugins.atuin]
-github = "ellie/atuin"
 [plugins.zoxide]
 remote = "https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/zoxide.plugin.zsh"
 [plugins.zsh-cargo-completion]
@@ -62,9 +60,6 @@ github = "zsh-users/zsh-completions"
 github = "b4b4r07/enhancd"
 [plugins.zsh-activate-py-environment]
 github = "se-jaeger/zsh-activate-py-environment"
-[plugins.mcfly]
-remote = "https://github.com/cantino/mcfly/blob/master/mcfly.zsh"
-
 
 [plugins.ohmyzsh-plugins]
 github = "ohmyzsh/ohmyzsh"
@@ -73,16 +68,18 @@ use = [
     "dotenv/*.zsh",
     "encode64/*.zsh",
     "extract/*.zsh",
-    "fzf/*.zsh",
     "gitignore/*.zsh",
     "golang/*.zsh",
     "gpg-agent/*.zsh",
     "python/*.zsh",
+    "rust/*.zsh",
     "thefuck/*.zsh",
     "command-not-found/*.zsh",
     "docker-compose/*.zsh",
-    "fnm/*.zsh",
     "brew/*.zsh",
     "uv/*.zsh",
     "urltools/*.zsh"
 ]
+
+[plugins.mcfly]
+inline = 'eval "$(mcfly init zsh)"'
